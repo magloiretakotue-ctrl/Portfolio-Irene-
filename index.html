@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Irène Magloire Moguo Takotue — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef3f8;--fg:#14202e;--mut:#506074;--line:#c9d4e0;--ac:#0F766E;--side:#0f2742;--sf:#e8eef5;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0c1622;--fg:#e6edf5;--mut:#9fb0c3;--line:#273a50;--ac:#4fd1c5;--side:#08111c;--sf:#13222f}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 "Public Sans",system-ui,sans-serif;display:flex;min-height:100vh}
+aside{position:fixed;left:0;top:0;bottom:0;width:250px;background:var(--side);color:#e6edf5;padding:calc(28px + env(safe-area-inset-top,0px)) 22px 22px;display:flex;flex-direction:column;gap:18px}
+aside b{font:600 21px/1.2 Newsreader,Georgia,serif;display:block}aside small{color:#9fb7d0}
+nav a{display:block;color:#cfdcea;text-decoration:none;padding:7px 0;border-bottom:1px solid #ffffff1f}
+nav a.on{color:#5eead4;font-weight:600}
+.lg{margin-top:auto;display:flex;gap:6px}.lg button{flex:1;background:none;border:1px solid #ffffff40;color:#e6edf5;padding:6px;cursor:pointer;font:inherit;font-size:13px}.lg button.on{background:#5eead4;color:#08111c;border-color:#5eead4}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #f59e0b;outline-offset:2px}
+main{margin-left:250px;padding:48px 6vw 64px;max-width:980px;width:100%}
+section{display:none}section.on{display:block}
+h1,h2,h3{font-family:Newsreader,Georgia,serif;margin:0 0 .4em;line-height:1.15}h1{font-size:clamp(34px,5vw,54px)}h2{font-size:30px}h3{font-size:21px}
+.row{display:grid;grid-template-columns:200px 1fr;gap:12px 28px;padding:22px 0;border-top:1px solid var(--line)}
+.row small,.m{color:var(--mut)}.tag{display:inline-block;border:1px solid var(--line);padding:1px 9px;margin:2px 4px 2px 0;font-size:13px}
+.ph{border:1px dashed var(--mut);padding:8px 12px;color:var(--mut);font-size:14px;margin-top:10px}
+.btn{display:inline-block;background:var(--ac);color:#fff;padding:10px 18px;text-decoration:none;margin:6px 8px 0 0;border:0;font:inherit;cursor:pointer}.btn.o{background:none;color:var(--ac);border:1px solid var(--ac)}
+a{color:var(--ac)}
+@media(max-width:760px){aside{position:static;width:100%;padding-bottom:14px}.lg{margin-top:0}body{display:block}main{margin:0;padding:28px 18px}.row{grid-template-columns:1fr}nav{display:flex;flex-wrap:wrap;gap:0 14px}nav a{border:0}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+section.on{animation:fade .4s ease}@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.row{transition:background .2s,padding-left .2s}.row:hover{background:var(--sf);padding-left:10px}.row[hidden]{display:none}
+nav a{transition:color .2s,padding-left .2s}nav a:hover{padding-left:6px;color:#5eead4}
+.btn{transition:transform .15s,box-shadow .15s}.btn:hover{transform:translateY(-2px);box-shadow:0 6px 16px #0f766e40}
+.tag{cursor:pointer;transition:background .2s,color .2s,border-color .2s}.tag:hover,.tag.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--ac);z-index:20}
+.sr{width:100%;max-width:360px;padding:9px 12px;border:1px solid var(--line);background:var(--sf);color:var(--fg);font:inherit;margin-bottom:8px}
+@media(prefers-reduced-motion:reduce){section.on{animation:none}.row,.btn,nav a{transition:none}}
+</style></head><body>
+<div id="bar"></div><aside><div><b>Irène Magloire<br>Moguo Takotue</b><small id="role"></small></div>
+<nav id="nav"></nav>
+<div class="lg"><button data-l="fr">Français</button><button data-l="de">Deutsch</button><button data-l="en">English</button></div></aside>
+<main>
+<section id="accueil"><h1 data-t="h"></h1><p data-t="intro"></p><a class="btn" href="#contact" data-t="b1"></a><a class="btn o" href="#projets" data-t="b2"></a></section>
+<section id="projets"><h2 data-t="n_projets"></h2><div id="pj"></div></section>
+<section id="etudes"><h2 data-t="n_etudes"></h2><div id="ed"></div><h3 style="margin-top:32px" data-t="trav"></h3><div id="wk"></div></section>
+<section id="experience"><h2 data-t="n_experience"></h2><div id="ex"></div><h3 style="margin-top:32px" data-t="lang"></h3><p data-t="langs"></p></section>
+<section id="rapports"><h2 data-t="n_rapports"></h2><input id="rs" type="search" class="sr" aria-label="search"><div id="rp"></div><p class="m" id="rn" data-t="rnone"></p>
+</section>
+<section id="contact"><h2 data-t="n_contact"></h2><div class="row"><small data-t="mail"></small><a href="mailto:magloiretakotue@gmail.com">magloiretakotue@gmail.com</a></div><div class="row"><small data-t="tel"></small><a href="tel:+33759664359">+33 7 59 66 43 59</a></div><div class="row"><small data-t="city"></small><span>Metz</span></div></section>
+</main>
+<script>const FN={r01:"exkursionsbericht",r02:"seminararbeit",r03:"guide-visa",r04:"testdaf",r05:"goethe-b2"};
+
+const T={
+fr:{role:"Étudiante en L3 Management franco-allemand et international",h:"Finance, gestion et projets, entre la France et l’Allemagne.",intro:"Étudiante en L3 Management franco-allemand et international (ISFATES, Université de Lorraine / htw saar), basée à Metz. Je recherche un stage de 3 à 6 mois à partir de février 2027 en finance, comptabilité, audit, contrôle de gestion, gestion des stocks / supply chain et business development.",b1:"Me contacter",b2:"Voir mes projets",
+n:["Accueil","Projets","Études","Expérience","Rapports","Contact"],n_projets:"Projets",n_etudes:"Études",n_experience:"Expérience",n_rapports:"Rapports",n_contact:"Contact",
+ph:"Lien ou rendu final du projet : à venir",tool:"Ouvrir l’outil",team:"Équipe de ",trav:"Travaux universitaires",lang:"Langues",langs:"Français natif · Allemand B2 · Anglais B2",
+rnone:"Aucun rapport pour le moment.",open:"Ouvrir",add:"Ajouter",mail:"E-mail",tel:"Téléphone",city:"Ville",rt:"Titre du rapport",del:"Supprimer",
+P:[["Trésorière de l’AGELIS","Projet de L3",4,"Trésorière du nouveau bureau en fonction depuis le 31 août 2026 : suivi des recettes, dépenses, remboursements et justificatifs de l’association.","Élaboration du budget prévisionnel, préparation des demandes de subvention (UFA, Université de Lorraine, Förderverein) et organisation de l’assemblée générale annuelle.",["Finance","Budget","Subventions"]],
+["Outil numérique de suivi financier pour l’AGELIS","Projet de groupe",3,"Assistant IA « AGELIS AI » : saisie des dépenses en langage naturel avec catégorisation automatique, validation manuelle et détection de doublons, à partir de la structure réelle des comptes de l’association.","Tableau de bord avec graphiques, budget prévisionnel calculé sur les exercices précédents, suivi des demandes de subvention, historique des documents pour les bureaux suivants, interface bilingue français/allemand.",["Contrôle de gestion","Outil numérique"]],
+["Organisation d’une excursion à Trapani","Semestre 4",6,"Excursion organisée dans le module Gestion de projet 2 (DFIM-406) pour 30 étudiants et 2 professeurs, à Trapani du 15 au 19 juin 2026 : destination choisie par vote, programme mêlant visites d’entreprises (sel, vin), Erice et Palerme.","Coordination de l’hébergement, des vols et du programme quotidien ; suivi du budget (vols : 6 510 €, hébergement : 4 920 €), enquête de satisfaction et rapport d’excursion.",["Gestion de projet","Logistique"]],
+["Guides d’accueil pour étudiants internationaux","Projet",0,"Guides officiels pour les étudiants camerounais de HITAS Douala sélectionnés pour le double diplôme DFHI-ISFATES. Le premier explique la demande de visa étudiant (VLS-TS), de Campus France Cameroun au dépôt chez VFS Global, avec des sources officielles.","Les démarches à l’arrivée à Metz (OFII, CPAM, CAF, banque) et le passage à Sarrebruck sont présentés sous forme de fiches visuelles.",["Accueil","Interculturel"]]],
+E:[["2026–2027","L3 Management franco-allemand et international","ISFATES, Université de Lorraine / htw saar. Trésorière de l’AGELIS dans le cadre du projet de L3 ; stage de fin de licence recherché à partir de février 2027."],["2024–2026","L1–L2","Comptabilité générale, financière et analytique, statistiques, mathématiques et informatique de gestion"],["2022–2024","HITAS, Cameroun","Remise à niveau, allemand et anglais"],["2015–2022","Baccalauréat général série D","Lycée de Bandjoun"]],
+W:[["Seminararbeit","Analyse de la littérature sur la performance financière des entreprises familiales et non familiales (ROA, Q de Tobin) : théorie de l’agence, stewardship, familiness, richesse socio-émotionnelle. Conclusion : le caractère familial seul n’explique pas les écarts, qui dépendent du fondateur, de la gouvernance et du contexte institutionnel."],["Présentation interculturelle","Saarland / Moselle"]],
+X:[["Depuis 30/09/2026","Employée polyvalente, Actua","Accueil et orientation des clients, service et contribution au bon déroulement des activités quotidiennes."],["03/2024–01/2025","Aide-cuisinière et vendeuse","Restaurant : aide à la préparation de plats simples, service client et vente dans un environnement exigeant en réactivité et gestion du stress."],["","Stage de vente, Emei Diese","Accueil et conseil personnalisé des clients, tenue de la caisse, mise en rayon et présentation des produits."]]},
+de:{role:"Studentin im 3. Jahr, Deutsch-Französisches Management",h:"Finanzen, Controlling und Projekte zwischen Frankreich und Deutschland.",intro:"Studentin im 3. Studienjahr des Studiengangs Deutsch-Französisches und Internationales Management (ISFATES, Université de Lorraine / htw saar), wohnhaft in Metz. Ich suche ein 3- bis 6-monatiges Praktikum ab Februar 2027 in Finanzen, Buchhaltung, Prüfung, Controlling, Bestandsmanagement / Supply Chain und Business Development.",b1:"Kontakt aufnehmen",b2:"Projekte ansehen",
+n:["Start","Projekte","Studium","Erfahrung","Berichte","Kontakt"],n_projets:"Projekte",n_etudes:"Studium",n_experience:"Erfahrung",n_rapports:"Berichte",n_contact:"Kontakt",
+ph:"Link oder Endergebnis des Projekts: folgt",tool:"Tool öffnen",team:"Team von ",trav:"Studienarbeiten",lang:"Sprachen",langs:"Französisch Muttersprache · Deutsch B2 · Englisch B2",
+rnone:"Noch keine Berichte.",open:"Öffnen",add:"Hinzufügen",mail:"E-Mail",tel:"Telefon",city:"Stadt",rt:"Titel des Berichts",del:"Löschen",
+P:[["Schatzmeisterin der AGELIS","Projekt im 3. Jahr",4,"Schatzmeisterin des neuen Vorstands seit dem 31. August 2026: Verfolgung von Einnahmen, Ausgaben, Erstattungen und Belegen des Vereins.","Erstellung des Budgetplans, Vorbereitung von Förderanträgen (UFA, Université de Lorraine, Förderverein) und Organisation der jährlichen Mitgliederversammlung.",["Finanzen","Budget","Förderung"]],
+["Digitales Finanz-Tool für die AGELIS","Gruppenprojekt",3,"KI-Assistent „AGELIS AI“: Erfassung von Ausgaben in natürlicher Sprache mit automatischer Kategorisierung, manueller Bestätigung und Dublettenerkennung, auf Basis der realen Kontenstruktur des Vereins.","Dashboard mit Diagrammen, Budgetplan aus den Vorjahren, Verfolgung von Förderanträgen, Dokumentenarchiv für spätere Vorstände, zweisprachige Oberfläche Deutsch/Französisch.",["Controlling","Digitales Tool"]],
+["Organisation einer Exkursion nach Trapani","4. Semester",6,"Exkursion im Modul Projektmanagement 2 (DFIM-406) für 30 Studierende und 2 Professoren nach Trapani, vom 15. bis 19. Juni 2026: Reiseziel per Abstimmung gewählt, Programm mit Unternehmensbesuchen (Salz, Wein), Erice und Palermo.","Koordination von Unterkunft, Flügen und Tagesprogramm; Budgetverfolgung (Flüge: 6.510 €, Unterkunft: 4.920 €), Umfrage unter den Teilnehmenden und Exkursionsbericht.",["Projektmanagement","Logistik"]],
+["Willkommensleitfäden für internationale Studierende","Projekt",0,"Offizielle Leitfäden für kamerunische HITAS-Studierende aus Douala, die für den Doppelabschluss DFHI-ISFATES ausgewählt wurden. Der erste erklärt den Antrag auf das Studierendenvisum (VLS-TS), von Campus France Kamerun bis zur Abgabe bei VFS Global, mit offiziellen Quellen.","Die Formalitäten bei der Ankunft in Metz (OFII, CPAM, CAF, Bank) und der Wechsel nach Saarbrücken werden als visuelle Steckbriefe dargestellt.",["Willkommen","Interkulturell"]]],
+E:[["2026–2027","3. Jahr Deutsch-Französisches und Internationales Management","ISFATES, Université de Lorraine / htw saar. Schatzmeisterin der AGELIS im Rahmen des Projekts im 3. Jahr; Abschlusspraktikum ab Februar 2027 gesucht."],["2024–2026","1.–2. Jahr","Allgemeine, Finanz- und Kostenrechnung, Statistik, Wirtschaftsmathematik und Wirtschaftsinformatik"],["2022–2024","HITAS, Kamerun","Vorbereitungskurse, Deutsch und Englisch"],["2015–2022","Allgemeines Abitur Serie D","Lycée de Bandjoun"]],
+W:[["Seminararbeit","Literaturanalyse zur finanziellen Performance von Familien- und Nicht-Familienunternehmen (ROA, Tobins Q): Agenturtheorie, Stewardship, Familiness, sozioemotionaler Reichtum. Ergebnis: Der Familiencharakter allein erklärt die Unterschiede nicht; sie hängen von Gründer, Governance und institutionellem Umfeld ab."],["Interkulturelle Präsentation","Saarland / Mosel"]],
+X:[["Seit 30.09.2026","Empfangs- und Servicekraft, Actua","Gäste empfangen und orientieren, bedienen und zum reibungslosen Ablauf der täglichen Aktivitäten beitragen."],["03/2024–01/2025","Küchenhilfe und Verkäuferin","Restaurant: Unterstützung bei der Zubereitung einfacher Speisen, Kundenservice und Verkauf in einem Umfeld mit hohen Anforderungen an Reaktionsfähigkeit und Stressbewältigung."],["","Verkaufspraktikum, Emei Diese","Kunden empfangen und individuell beraten, Kassenvorgänge, Warenpräsentation und Regalorganisation."]]},
+en:{role:"3rd-year student, Franco-German Management",h:"Finance, management and projects between France and Germany.",intro:"Third-year student in Franco-German and International Management (ISFATES, Université de Lorraine / htw saar), based in Metz. I am looking for a 3 to 6-month internship from February 2027 in finance, accounting, audit, management control, inventory management / supply chain and business development.",b1:"Contact me",b2:"See my projects",
+n:["Home","Projects","Education","Experience","Reports","Contact"],n_projets:"Projects",n_etudes:"Education",n_experience:"Experience",n_rapports:"Reports",n_contact:"Contact",
+ph:"Project link or final deliverable: coming soon",tool:"Open the tool",team:"Team of ",trav:"Academic work",lang:"Languages",langs:"French native · German B2 · English B2",
+rnone:"No reports yet.",open:"Open",add:"Add",mail:"Email",tel:"Phone",city:"City",rt:"Report title",del:"Delete",
+P:[["Treasurer of AGELIS","Year 3 project",4,"Treasurer of the new board since 31 August 2026: tracking the association’s income, expenses, reimbursements and supporting documents.","Building the forecast budget, preparing grant applications (UFA, Université de Lorraine, Förderverein) and organising the annual general meeting.",["Finance","Budget","Grants"]],
+["Digital financial tracking tool for AGELIS","Group project",3,"AI assistant “AGELIS AI”: expenses entered in natural language with automatic categorisation, manual validation and duplicate detection, built on the association’s real account structure.","Dashboard with charts, forecast budget calculated from previous years, grant application tracking, document history for future boards, bilingual French/German interface.",["Management control","Digital tool"]],
+["Organising an excursion to Trapani","Semester 4",6,"Excursion organised in the Project Management 2 module (DFIM-406) for 30 students and 2 professors, in Trapani from 15 to 19 June 2026: destination chosen by vote, programme combining company visits (salt, wine), Erice and Palermo.","Coordinating accommodation, flights and the daily programme; budget tracking (flights: €6,510, accommodation: €4,920), participant survey and excursion report.",["Project management","Logistics"]],
+["Welcome guides for international students","Project",0,"Official guides for Cameroonian HITAS Douala students selected for the DFHI-ISFATES double degree. The first explains the student visa application (VLS-TS), from Campus France Cameroon to filing with VFS Global, with official sources.","Formalities on arrival in Metz (OFII, CPAM, CAF, bank) and the move to Saarbrücken are presented as visual fact sheets.",["Onboarding","Intercultural"]]],
+E:[["2026–2027","Year 3, Franco-German and International Management","ISFATES, Université de Lorraine / htw saar. Treasurer of AGELIS as part of the year 3 project; looking for an end-of-degree internship from February 2027."],["2024–2026","Years 1–2","General, financial and cost accounting, statistics, business mathematics and business IT"],["2022–2024","HITAS, Cameroon","Foundation courses, German and English"],["2015–2022","General baccalaureate, series D","Lycée de Bandjoun"]],
+W:[["Seminararbeit","Literature review on the financial performance of family and non-family firms (ROA, Tobin’s Q): agency theory, stewardship, familiness, socioemotional wealth. Finding: family character alone does not explain the differences, which depend on the founder, governance and the institutional context."],["Intercultural presentation","Saarland / Moselle"]],
+X:[["Since 30/09/2026","Versatile team member, Actua","Welcoming and guiding customers, serving, and contributing to the smooth running of daily activities."],["03/2024–01/2025","Kitchen assistant and restaurant salesperson","Restaurant: helping prepare simple dishes, customer service and sales in a setting that demands responsiveness and stress management."],["","Sales internship, Emei Diese","Welcoming and advising customers individually, handling the till, shelf stocking and product display."]]}};
+const AG="https://claude.ai/artifact/UzkXx5H2fHcaTgk84QVFWL";const $=s=>document.querySelector(s),ids=["accueil","projets","etudes","experience","rapports","contact"];
+let L="fr";try{L=localStorage.getItem("l")||""}catch(e){}
+if(!T[L]){const n=(navigator.language||"fr").slice(0,2);L=T[n]?n:"fr"}
+const row=(a,b,c)=>`<div class="row"><small>${a}</small><div>${b}${c||""}</div></div>`;
+function render(){const t=T[L];document.documentElement.lang=L;$("#role").textContent=t.role;
+document.querySelectorAll("[data-t]").forEach(e=>e.textContent=t[e.dataset.t]);
+$("#rt").placeholder=t.rt;
+$("#nav").innerHTML=ids.map((i,k)=>`<a href="#${i}" data-i="${i}">${t.n[k]}</a>`).join("");
+$("#pj").innerHTML=t.P.map((p,i)=>row(`<b>${p[1]}</b>${p[2]?`<br>${t.team}${p[2]}`:""}`,`<h3>${p[0]}</h3><p>${p[3]}</p><p>${p[4]}</p>`+p[5].map(x=>`<span class="tag">${x}</span>`).join("")+(i==1?`<div class="ph"><a href="${AG}" target="_blank" rel="noopener">${t.tool}</a></div>`:""))).join("");
+$("#ed").innerHTML=t.E.map(e=>row(e[0],`<b>${e[1]}</b>`,`<div class="m">${e[2]}</div>`)).join("");
+$("#wk").innerHTML=t.W.map(e=>row("",`<b>${e[0]}</b>`,`<div class="m">${e[1]}</div>`)).join("");
+$("#ex").innerHTML=t.X.map(e=>row(e[0],`<b>${e[1]}</b>`,`<div class="m">${e[2]}</div>`)).join("");
+document.querySelectorAll(".lg button").forEach(b=>b.classList.toggle("on",b.dataset.l==L));
+show();paint()}
+function show(){const h=(location.hash||"#accueil").slice(1),k=ids.includes(h)?h:"accueil";
+ids.forEach(i=>{$("#"+i).classList.toggle("on",i==k)});document.querySelectorAll("nav a").forEach(a=>a.classList.toggle("on",a.dataset.i==k))}
+document.querySelectorAll(".lg button").forEach(b=>b.onclick=()=>{L=b.dataset.l;try{localStorage.setItem("l",L)}catch(e){}render()});
+addEventListener("hashchange",show);
+const BASE=[["r01","Exkursionsbericht Trapani 2026","06/2026","b71a17a8310da21b07fb99de66996162"],["r02","Seminararbeit : Familienunternehmen und Nicht-Familienunternehmen","","cecf5852a1fa487d26c34a83e4929c47"],["r03","Guide 1 : Visa France, HITAS / ISFATES","","c63045d334e00f5151d67dd3b82fca2d"],["r04","TestDaF-Zertifikat","17/07/2024","025a1db8ac6ac817b49df7439c68e9fb"],["r05","Goethe-Zertifikat B2","04/2024","36190c419c7e8876517bc0b622eb72bb"]].map(a=>({id:a[0],title:a[1],date:a[2],aid:a[3],url:"/_blob/"+a[3]}));
+let R=[...BASE],db=null,asx=null,own=false;
+function paint(){const t=T[L];$("#rn").hidden=R.length>0;
+$("#rp").innerHTML=R.map(r=>row(r.date||"",`<b>${esc(r.title)}</b>`,(FN[r.id]?` <a href="docs/${FN[r.id]}.pdf" target="_blank" rel="noopener">${t.open}</a>`:` <a href="${esc(r.url)}" target="_blank" rel="noopener">${t.open}</a>`)+(own?` <a href="#rapports" data-d="${r.id}">${t.del}</a>`:""))).join("")}
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+$("#rp").onclick=async e=>{const d=e.target.dataset.d;if(!d||!db)return;e.preventDefault();const r=R.find(x=>x.id==d);try{await db.collection("reports").doc(d).delete();if(asx&&r.aid)await asx.delete(r.aid)}catch(x){}};
+(async()=>{try{const u=await claude.use("user");own=!!(u&&u.canEdit());db=await claude.use("db");asx=await claude.use("assets");
+$("#up").hidden=!(own&&db&&asx);
+if(db)db.collection("reports").onSnapshot(s=>{R=s.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(b.ts||0)-(a.ts||0));paint()},()=>{})}catch(e){}})();
+(()=>{let F="";const pj=$("#pj"),bar=$("#bar"),rs=$("#rs");
+const apply=()=>{pj.querySelectorAll(".row").forEach(r=>{r.hidden=!!F&&![...r.querySelectorAll(".tag")].some(t=>t.textContent==F)});pj.querySelectorAll(".tag").forEach(t=>t.classList.toggle("on",t.textContent==F))};
+pj.addEventListener("click",e=>{if(e.target.classList.contains("tag")){F=F==e.target.textContent?"":e.target.textContent;apply()}});
+new MutationObserver(()=>{F=""}).observe(pj,{childList:true});
+const PH={fr:"Rechercher un document",de:"Dokument suchen",en:"Search documents"},ph=()=>{rs.placeholder=PH[document.documentElement.lang]||PH.fr};
+const flt=()=>{const q=rs.value.toLowerCase();document.querySelectorAll("#rp .row").forEach(r=>{r.hidden=!r.textContent.toLowerCase().includes(q)})};
+rs.addEventListener("input",flt);new MutationObserver(flt).observe($("#rp"),{childList:true});
+new MutationObserver(ph).observe(document.documentElement,{attributes:true,attributeFilter:["lang"]});ph();
+addEventListener("scroll",()=>{const h=document.documentElement;bar.style.width=(h.scrollTop/((h.scrollHeight-h.clientHeight)||1)*100)+"%"},{passive:true});
+addEventListener("hashchange",()=>scrollTo(0,0));
+})();
+render();
+</script></body></html>
